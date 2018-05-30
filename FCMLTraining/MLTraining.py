@@ -56,7 +56,7 @@ def choose_learning_rate():
         npa = np.asarray(feat)
         npl = np.asarray(label)
         scores = cross_validation.cross_val_score(clf, npa, npl, cv=10)
-        print "n_estimators = 101 | learning_rate = {0} | cross_val_score = {1}".format(i, scores.mean())
+        print("n_estimators = 101 | learning_rate = {0} | cross_val_score = {1}".format(i, scores.mean()))
 
 
 # Training function
@@ -78,12 +78,12 @@ def test_system():
     # path of test folder
     for each in glob('./testing/*'):
         features2 = []
-        print "Opening {}...".format(each)
+        print("Opening {}...".format(each))
         t_image = Image(each)
         features2.append(np.concatenate([hhfe.extract(t_image), ehfe.extract(t_image), haarfe.extract(t_image)]))
         t_data = pickle.load('classifier.pkl', 'rb')
-        print t_data.predict_proba(np.asarray(features2))
-        print t_data.predict(np.asanyarray(features2))
+        print(t_data.predict_proba(np.asarray(features2)))
+        print(t_data.predict(np.asanyarray(features2)))
 
 if __name__ == '__main__':
     training()

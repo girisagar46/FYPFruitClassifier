@@ -3,8 +3,8 @@ import os
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 
-import MainImplementation
-from Services import MainServices
+from .MainImplementation import predictor
+from .Services import MainServices
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/home/linuxsagar/tempTest'
@@ -35,7 +35,7 @@ def upload():
 
 @app.route('/predict')
 def predict():
-    data = MainImplementation.predictor()
+    data = predictor()
     MainServices.clean_dir()
     return render_template('index.html', result=data[0], hue=data[1], edge=data[2], haar=data[3])
 
