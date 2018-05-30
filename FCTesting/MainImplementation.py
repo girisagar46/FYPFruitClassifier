@@ -11,7 +11,7 @@ from SimpleCV import EdgeHistogramFeatureExtractor
 from matplotlib import pyplot as plt
 import os
 
-from Services.MainServices import make_histogram
+from .Services.MainServices import make_histogram
 
 dataDir = os.path.dirname(os.path.abspath(__file__))
 haar_file = os.path.join(dataDir, "../data/haar.txt")
