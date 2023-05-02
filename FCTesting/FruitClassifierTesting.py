@@ -9,7 +9,7 @@ from .Services import MainServices
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/home/linuxsagar/tempTest'
 app.config['GRAPH_FOLDER'] = '/home/linuxsagar/PycharmProjects/FruitClassifierTesting/graphs'
-app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg'}
 
 
 def allowed_file(filename):
